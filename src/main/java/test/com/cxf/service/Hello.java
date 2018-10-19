@@ -7,17 +7,16 @@ import javax.jws.WebService;
 import javax.xml.ws.RequestWrapper;
 import javax.xml.ws.ResponseWrapper;
 
-@WebService(targetNamespace = "http://test.com.cxf.service/", name = "Hello")
+@WebService(targetNamespace = "http://service.ws.sample/", name = "Hello")
 public interface Hello {
 
   @WebResult(name = "return", targetNamespace = "")
   @RequestWrapper(localName = "sayHello",
-          targetNamespace = "http://test.com.cxf.service/",
-          className = "test.com.cxf.service.Hello")
+          targetNamespace = "http://service.ws.sample/",
+          className = "test.com.cxf.service.SayHello")
   @WebMethod(action = "urn:SayHello")
   @ResponseWrapper(localName = "sayHelloResponse",
-          targetNamespace = "http://test.com.cxf.service/",
-          className = "")
+          targetNamespace = "http://service.ws.sample/",
+          className = "test.com.cxf.service.SayHelloResponse")
   String sayHello(@WebParam(name = "myname", targetNamespace = "") String myname);
-
 }
