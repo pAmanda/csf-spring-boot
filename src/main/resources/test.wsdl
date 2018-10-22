@@ -1,6 +1,6 @@
-<wsdl:definitions xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://www.bndes.gov.br" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WSIntegracaoBNDESImplService" targetNamespace="http://www.bndes.gov.br">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://www.integration.model.bndes.sippe.com.br" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.integration.model.bndes.sippe.com.br" targetNamespace="http://www.integration.model.bndes.sippe.com.br">
     <wsdl:types>
-        <xs:schema xmlns:tns="http://www.bndes.gov.br" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.bndes.gov.br" version="1.0">
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.integration.model.bndes.sippe.com.br" version="1.0">
             <xs:element name="RespostaAutorizacao" type="tns:RespostaAutorizacao"/>
             <xs:element name="RespostaCancelamento" type="tns:RespostaCancelamento"/>
             <xs:element name="RespostaCaptura" type="tns:RespostaCaptura"/>
@@ -147,147 +147,14 @@
             </xs:complexType>
         </xs:schema>
     </wsdl:types>
-    <wsdl:message name="SolicitacaoCapturaResponse">
-        <wsdl:part element="tns:RespostaCaptura" name="parameters"></wsdl:part>
-    </wsdl:message>
-    <wsdl:message name="SolicitacaoConsulta">
-        <wsdl:part element="tns:SolicitacaoConsulta" name="parameters"></wsdl:part>
-    </wsdl:message>
-    <wsdl:message name="SolicitacaoConsultaResponse">
-        <wsdl:part element="tns:RespostaConsulta" name="parameters"></wsdl:part>
-    </wsdl:message>
-    <wsdl:message name="SolicitacaoTID">
-        <wsdl:part element="tns:SolicitacaoTID" name="parameters"></wsdl:part>
-    </wsdl:message>
-    <wsdl:message name="SolicitacaoCancelamentoResponse">
-        <wsdl:part element="tns:RespostaCancelamento" name="parameters"></wsdl:part>
-    </wsdl:message>
-    <wsdl:message name="SolicitacaoTIDResponse">
-        <wsdl:part element="tns:RespostaTID" name="parameters"></wsdl:part>
-    </wsdl:message>
-    <wsdl:message name="SolicitacaoCaptura">
-        <wsdl:part element="tns:SolicitacaoCaptura" name="parameters"></wsdl:part>
-    </wsdl:message>
-    <wsdl:message name="SolicitacaoAutorizacaoResponse">
-        <wsdl:part element="tns:RespostaAutorizacao" name="parameters"></wsdl:part>
-    </wsdl:message>
-    <wsdl:message name="SolicitacaoNaoIdentificada">
-        <wsdl:part element="tns:SolicitacaoNaoIdentificada" name="parameters"></wsdl:part>
-    </wsdl:message>
-    <wsdl:message name="SolicitacaoDeteccaoDisponibilidade">
-        <wsdl:part element="tns:SolicitacaoDeteccaoDisponibilidade" name="parameters"></wsdl:part>
-    </wsdl:message>
-    <wsdl:message name="SolicitacaoCancelamento">
-        <wsdl:part element="tns:SolicitacaoCancelamento" name="parameters"></wsdl:part>
-    </wsdl:message>
-    <wsdl:message name="SolicitacaoNaoIdentificadaResponse">
-        <wsdl:part element="tns:RespostaErroSolicitacaoNaoIdentificada" name="parameters"></wsdl:part>
-    </wsdl:message>
-    <wsdl:message name="SolicitacaoDeteccaoDisponibilidadeResponse">
-        <wsdl:part element="tns:RespostaDeteccaoDisponibilidade" name="parameters"></wsdl:part>
-    </wsdl:message>
-    <wsdl:message name="SolicitacaoAutorizacao">
-        <wsdl:part element="tns:SolicitacaoAutorizacao" name="parameters"></wsdl:part>
-    </wsdl:message>
-    <wsdl:portType name="WSIntegracaoBNDES">
-        <wsdl:operation name="SolicitacaoDeteccaoDisponibilidade">
-            <wsdl:input message="tns:SolicitacaoDeteccaoDisponibilidade" name="SolicitacaoDeteccaoDisponibilidade"></wsdl:input>
-            <wsdl:output message="tns:SolicitacaoDeteccaoDisponibilidadeResponse" name="SolicitacaoDeteccaoDisponibilidadeResponse"></wsdl:output>
-        </wsdl:operation>
-        <wsdl:operation name="SolicitacaoCancelamento">
-            <wsdl:input message="tns:SolicitacaoCancelamento" name="SolicitacaoCancelamento"></wsdl:input>
-            <wsdl:output message="tns:SolicitacaoCancelamentoResponse" name="SolicitacaoCancelamentoResponse"></wsdl:output>
-        </wsdl:operation>
-        <wsdl:operation name="SolicitacaoTID">
-            <wsdl:input message="tns:SolicitacaoTID" name="SolicitacaoTID"></wsdl:input>
-            <wsdl:output message="tns:SolicitacaoTIDResponse" name="SolicitacaoTIDResponse"></wsdl:output>
-        </wsdl:operation>
-        <wsdl:operation name="SolicitacaoAutorizacao">
-            <wsdl:input message="tns:SolicitacaoAutorizacao" name="SolicitacaoAutorizacao"></wsdl:input>
-            <wsdl:output message="tns:SolicitacaoAutorizacaoResponse" name="SolicitacaoAutorizacaoResponse"></wsdl:output>
-        </wsdl:operation>
-        <wsdl:operation name="SolicitacaoConsulta">
-            <wsdl:input message="tns:SolicitacaoConsulta" name="SolicitacaoConsulta"></wsdl:input>
-            <wsdl:output message="tns:SolicitacaoConsultaResponse" name="SolicitacaoConsultaResponse"></wsdl:output>
-        </wsdl:operation>
-        <wsdl:operation name="SolicitacaoCaptura">
-            <wsdl:input message="tns:SolicitacaoCaptura" name="SolicitacaoCaptura"></wsdl:input>
-            <wsdl:output message="tns:SolicitacaoCapturaResponse" name="SolicitacaoCapturaResponse"></wsdl:output>
-        </wsdl:operation>
-        <wsdl:operation name="SolicitacaoNaoIdentificada">
-            <wsdl:input message="tns:SolicitacaoNaoIdentificada" name="SolicitacaoNaoIdentificada"></wsdl:input>
-            <wsdl:output message="tns:SolicitacaoNaoIdentificadaResponse" name="SolicitacaoNaoIdentificadaResponse"></wsdl:output>
-        </wsdl:operation>
+    <wsdl:portType name="BndesPort">
     </wsdl:portType>
-    <wsdl:binding name="WSIntegracaoBNDESImplServiceSoapBinding" type="tns:WSIntegracaoBNDES">
-        <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
-        <wsdl:operation name="SolicitacaoDeteccaoDisponibilidade">
-            <soap12:operation soapAction="SolicitacaoDeteccaoDisponibilidade" style="document"/>
-            <wsdl:input name="SolicitacaoDeteccaoDisponibilidade">
-                <soap12:body use="literal"/>
-            </wsdl:input>
-            <wsdl:output name="SolicitacaoDeteccaoDisponibilidadeResponse">
-                <soap12:body use="literal"/>
-            </wsdl:output>
-        </wsdl:operation>
-        <wsdl:operation name="SolicitacaoCancelamento">
-            <soap12:operation soapAction="SolicitacaoCancelamento" style="document"/>
-            <wsdl:input name="SolicitacaoCancelamento">
-                <soap12:body use="literal"/>
-            </wsdl:input>
-            <wsdl:output name="SolicitacaoCancelamentoResponse">
-                <soap12:body use="literal"/>
-            </wsdl:output>
-        </wsdl:operation>
-        <wsdl:operation name="SolicitacaoTID">
-            <soap12:operation soapAction="SolicitacaoTID" style="document"/>
-            <wsdl:input name="SolicitacaoTID">
-                <soap12:body use="literal"/>
-            </wsdl:input>
-            <wsdl:output name="SolicitacaoTIDResponse">
-                <soap12:body use="literal"/>
-            </wsdl:output>
-        </wsdl:operation>
-        <wsdl:operation name="SolicitacaoAutorizacao">
-            <soap12:operation soapAction="SolicitacaoAutorizacao" style="document"/>
-            <wsdl:input name="SolicitacaoAutorizacao">
-                <soap12:body use="literal"/>
-            </wsdl:input>
-            <wsdl:output name="SolicitacaoAutorizacaoResponse">
-                <soap12:body use="literal"/>
-            </wsdl:output>
-        </wsdl:operation>
-        <wsdl:operation name="SolicitacaoConsulta">
-            <soap12:operation soapAction="SolicitacaoConsulta" style="document"/>
-            <wsdl:input name="SolicitacaoConsulta">
-                <soap12:body use="literal"/>
-            </wsdl:input>
-            <wsdl:output name="SolicitacaoConsultaResponse">
-                <soap12:body use="literal"/>
-            </wsdl:output>
-        </wsdl:operation>
-        <wsdl:operation name="SolicitacaoCaptura">
-            <soap12:operation soapAction="SolicitacaoCaptura" style="document"/>
-            <wsdl:input name="SolicitacaoCaptura">
-                <soap12:body use="literal"/>
-            </wsdl:input>
-            <wsdl:output name="SolicitacaoCapturaResponse">
-                <soap12:body use="literal"/>
-            </wsdl:output>
-        </wsdl:operation>
-        <wsdl:operation name="SolicitacaoNaoIdentificada">
-            <soap12:operation soapAction="SolicitacaoNaoIdentificada" style="document"/>
-            <wsdl:input name="SolicitacaoNaoIdentificada">
-                <soap12:body use="literal"/>
-            </wsdl:input>
-            <wsdl:output name="SolicitacaoNaoIdentificadaResponse">
-                <soap12:body use="literal"/>
-            </wsdl:output>
-        </wsdl:operation>
+    <wsdl:binding name="BndesPortSoap11" type="tns:BndesPort">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
     </wsdl:binding>
-    <wsdl:service name="WSIntegracaoBNDESImplService">
-        <wsdl:port binding="tns:WSIntegracaoBNDESImplServiceSoapBinding" name="WSIntegracaoBNDESPort">
-            <soap12:address location="http://192.168.5.89:16080/NetServicesEJB/WSIntegracaoBNDES"/>
+    <wsdl:service name="BndesPortService">
+        <wsdl:port binding="tns:BndesPortSoap11" name="BndesPortSoap11">
+            <soap:address location="http://localhost:8080/acquirer/bndes/api/v1"/>
         </wsdl:port>
     </wsdl:service>
 </wsdl:definitions>
